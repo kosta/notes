@@ -12,11 +12,15 @@ Can [print an access token](https://cloud.google.com/sdk/gcloud/reference/auth/p
 curl 'https://storage.googleapis.com/storage/v1/b/$bucket/o/$path' -H "Authorization: Bearer $(gcloud auth print-access-token)"
 ```
 
+## [crane](https://github.com/google/go-containerregistry/tree/main/cmd/crane)
+
+seems useful to e.g. show image sizes or to extract or cat individual files from an image
+
 ## macos
 
 ### free used ports (e.g. for local load testing)
 
-(from brew siege packaed)
+(from brew siege package)
 
 macOS has only 16K ports available that won't be released until socket
 TIME_WAIT is passed. The default timeout for TIME_WAIT is 15 seconds.
