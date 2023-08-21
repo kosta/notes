@@ -4,6 +4,8 @@ Just some random notes.
 
 ## gsutil
 
+### Access token
+
 Can [print an access token](https://cloud.google.com/sdk/gcloud/reference/auth/print-access-token) to be used in e.g. curl like this:
 
 (replace $bucket and $path, $path must url-escape slashes etc.)
@@ -11,6 +13,10 @@ Can [print an access token](https://cloud.google.com/sdk/gcloud/reference/auth/p
 ```sh
 curl 'https://storage.googleapis.com/storage/v1/b/$bucket/o/$path' -H "Authorization: Bearer $(gcloud auth print-access-token)"
 ```
+
+### Project of a bucket
+
+```(export BUCKET=gs://here_is_your_bucket; gcloud projects describe $(gcloud storage buckets describe $BUCKET --format 'value(projectNumber)') --format 'value(name)')```
 
 ## [crane](https://github.com/google/go-containerregistry/tree/main/cmd/crane)
 
